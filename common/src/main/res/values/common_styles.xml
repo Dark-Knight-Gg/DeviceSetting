@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme">
+        <item name="layoutListEmptyDrawableStyle">@style/LayoutList.EmptyDrawable</item>
+        <item name="layoutListEmptyTextStyle">@style/LayoutList.EmptyText</item>
+        <item name="layoutListLoadingIndicator">@style/LayoutList.Indicator</item>
+        <item name="layoutListLoadingMoreIndicator">@style/LayoutList.LoadmoreIndicator</item>
+    </style>
+
+    <style name="LayoutList" />
+
+    <style name="LayoutList.EmptyDrawable">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+    </style>
+
+    <style name="LayoutList.EmptyText">
+        <item name="android:textColor">?attr/colorPrimaryDark</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">18dp</item>
+        <item name="android:paddingBottom">18dp</item>
+    </style>
+
+    <style name="LayoutList.Indicator">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminateTint">?colorAccent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="LayoutList.LoadmoreIndicator">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminateTint">?colorPrimary</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>

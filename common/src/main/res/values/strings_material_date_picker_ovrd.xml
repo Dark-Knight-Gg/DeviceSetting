@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="mtrl_picker_range_header_title" tools:override="true">日付で絞り込む</string>
+    <string name="mtrl_picker_date_header_title" tools:override="true">日付で絞り込む</string>
+    <string name="mtrl_picker_range_header_unselected" tools:override="true">開始日～終了日</string>
+    <string name="mtrl_picker_range_header_only_start_selected" tools:override="true">%1$s～終了日</string>
+    <string name="mtrl_picker_range_header_only_end_selected" tools:override="true">開始日～%1$s</string>
+    <string name="mtrl_picker_range_header_selected" tools:override="true">%1$s～%2$s</string>
+    <string name="mtrl_picker_date_header_unselected" tools:override="true">選択した日付</string>
+    <string name="mtrl_picker_date_header_selected" tools:override="true">%1$s</string>
+    <string name="mtrl_picker_confirm" tools:override="true">同調</string>
+    <string name="mtrl_picker_cancel" tools:override="true">キャンセル</string>
+    <string name="mtrl_picker_text_input_date_hint" tools:override="true">日付</string>
+    <string name="mtrl_picker_text_input_date_range_start_hint" tools:override="true">開始日</string>
+    <string name="mtrl_picker_text_input_date_range_end_hint" tools:override="true">終了日</string>
+    <string name="mtrl_picker_text_input_year_abbr" tools:override="true">y</string>
+    <string name="mtrl_picker_text_input_month_abbr" tools:override="true">m</string>
+    <string name="mtrl_picker_text_input_day_abbr" tools:override="true">d</string>
+    <string name="mtrl_picker_save" tools:override="true">保存</string>
+    <string name="mtrl_picker_invalid_range" tools:override="true">範囲が無効です。</string>
+    <string name="mtrl_picker_out_of_range" tools:override="true">範囲外: %1$s</string>
+    <string name="mtrl_picker_invalid_format" tools:override="true">形式が無効です。</string>
+    <string name="mtrl_picker_invalid_format_use" tools:override="true">使用: %1$s</string>
+    <string name="mtrl_picker_invalid_format_example" tools:override="true">例: %1$s</string>
+    <string name="mtrl_picker_toggle_to_calendar_input_mode" tools:override="true">カレンダー入力モードに切り替え</string>
+    <string name="mtrl_picker_toggle_to_text_input_mode" tools:override="true">テキスト入力モードに切り替え</string>
+    <string name="mtrl_picker_a11y_prev_month" tools:override="true">前月に変更</string>
+    <string name="mtrl_picker_a11y_next_month" tools:override="true">翌月に変更</string>
+    <string name="mtrl_picker_toggle_to_year_selection" tools:override="true">タップすると、年の選択に切り替わります</string>
+    <string name="mtrl_picker_toggle_to_day_selection" tools:override="true">タップすると、日の選択に切り替わります</string>
+    <string name="mtrl_picker_day_of_week_column_header" tools:override="true">曜日の列: %1$s</string>
+    <string name="mtrl_picker_announce_current_selection" tools:override="true">現在の選択: %1$s</string>
+    <string name="mtrl_picker_navigate_to_year_description" tools:override="true">%1$s 年に移動</string>
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="layoutManager"
+            type="androidx.recyclerview.widget.RecyclerView.LayoutManager" />
+
+        <variable
+            name="itemTouchHelper"
+            type="androidx.recyclerview.widget.ItemTouchHelper" />
+
+        <variable
+            name="contentAdapter"
+            type="androidx.recyclerview.widget.RecyclerView.Adapter" />
+
+        <variable
+            name="controller"
+            type="vn.com.vti.common.ui.list.IListController" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:theme="@style/AppTheme">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:enabled="@{safeUnbox(controller.isRefreshEnabled())}"
+            app:srRefreshListener="@{controller::onSwipeRefresh}"
+            app:srRefreshing="@{safeUnbox(controller.isRefreshing())}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:descendantFocusability="beforeDescendants"
+                app:rvAdapter="@{contentAdapter}"
+                app:rvItemTouchHelper="@{itemTouchHelper}"
+                app:rvLayoutManager="@{layoutManager}"
+                app:rvLoadmoreListener="@{controller::onRecyclerLoadmore}" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <LinearLayout
+            android:id="@+id/empty_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:viewCompatVisibility="@{safeUnbox(controller.isEmptyData())}"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_empty"
+                style="?layoutListEmptyDrawableStyle"
+                android:adjustViewBounds="true"
+                android:onClick="@{_  -> controller.onRequestTryAgain()}"
+                android:src="@{controller.observableEmptyDrawable()}"
+                tools:src="@tools:sample/avatars" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txt_empty"
+                style="?layoutListEmptyTextStyle"
+                android:onClick="@{_ -> controller.onRequestTryAgain()}"
+                android:text="@{controller.observableEmptyMessage()}"
+                tools:lines="3"
+                tools:text="@tools:sample/lorem/random"
+                tools:textColor="@android:color/black" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/loading"
+            style="?layoutListLoadingIndicator"
+            app:viewCompatVisibility="@{controller.isLoading()}"
+            tools:indeterminateTint="@android:color/holo_red_dark"
+            tools:visibility="visible" />
+    </FrameLayout>
+</layout>

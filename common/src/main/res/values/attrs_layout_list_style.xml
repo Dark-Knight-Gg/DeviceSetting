@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="layoutListEmptyTextStyle" format="reference" />
+    <attr name="layoutListEmptyDrawableStyle" format="reference" />
+    <attr name="layoutListLoadingIndicator" format="reference" />
+    <attr name="layoutListLoadingMoreIndicator" format="reference" />
+</resources>

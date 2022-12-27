@@ -1,0 +1,93 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        gradleVersion = '7.3.1'
+        kotlinVersion = '1.7.20'
+        navigationVersion = '2.5.3'
+        crashlyticsGradleVersion = '2.8.1'
+        googleServicesVersion = '4.3.10'
+        deployGatePluginVersion = '2.5.0'
+        hiltVersion = '2.44.2'
+        hiltJetpackVersion = '1.0.0'
+        buildConfiguration = [
+                'buildTool' : '33.0.0',
+                'compileSdk': 33,
+                'targetSdk' : 33,
+                'minSdk'    : 24,
+        ]
+        versions = [
+                //Core
+                'androidxKotlinCore'      : '1.9.0',
+                'androidxLifecycle'       : '2.5.1',
+                'androidxAppCompat'       : '1.5.1',
+                'androidxConstraintLayout': '2.1.4',
+                'androidxRecyclerView'    : '1.2.1',
+                'androidxSwipeLayout'     : '1.1.0',
+                'androidxWorkManager'     : '2.7.1',
+                'androidxCameraCore'      : '1.2.0-alpha03',
+                'androidxCameraCameraView': '1.2.0-alpha03',
+                'androidxSecurityCrypto'  : '1.1.0-alpha03',
+                'androidKotlinCoroutines' : '1.6.4',
+                'androidDataStore'        : '1.0.0',
+                'googleMaterials'         : '1.7.0-beta01',
+                'googleGuava'             : '31.1-jre',
+                'googleFirebaseBom'       : '31.0.2',
+
+                //Network
+                'retrofit'                : '2.9.0',
+                'retrofitAdapter'         : '3.0.0',
+                'okHttpLogging'           : '4.10.0',
+
+                //ReactiveX
+                'reactivexJava3'          : '3.1.5',
+                'reactivexKotlin'         : '3.0.1',
+                'reactivexAndroid'        : '3.0.2',
+                'reactivexBinding'        : '4.0.0',
+
+                //Glide
+                'glide'                   : '4.14.2',
+
+                //Gson
+                'gson'                    : '2.10',
+
+                //UT
+                'jUnitCore'               : "4.13.2",
+                'jUnitAndroidExt'         : '1.1.4',
+                'jUnitRunner'             : '1.5.1',
+                'jUnitEspressoCore'       : '3.5.0',
+
+                //Logger
+                'timber'                  : '5.0.1',
+
+                //Event bus
+                'eventBus'                : '3.3.1',
+
+                //ROOM database
+                'room'                    : '2.5.0-alpha02',
+
+                //ZXing
+                'zxingCore'               : '3.5.1',
+        ]
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradleVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion"
+        classpath "com.google.gms:google-services:$googleServicesVersion"
+        //For firebase-crashlytics, remove if unused
+        classpath "com.google.firebase:firebase-crashlytics-gradle:$crashlyticsGradleVersion"
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+        classpath "com.deploygate:gradle:$deployGatePluginVersion"
+    }
+}
+
+plugins {
+    id 'com.android.application' version '7.3.1' apply false
+    id 'com.android.library' version '7.3.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+    id 'org.jetbrains.kotlin.kapt' version '1.7.20' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

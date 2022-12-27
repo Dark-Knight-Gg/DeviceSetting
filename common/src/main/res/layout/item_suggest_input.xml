@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="label"
+            type="String" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#EDF0F4"
+        app:cardCornerRadius="@dimen/radius_small">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/space_xsmall"
+            android:paddingVertical="@dimen/space_small"
+            android:text="@{label}"
+            android:textColor="?colorOnSurface"
+            tools:text="9999999"
+            tools:textColor="@android:color/black" />
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VerticalArrow">
+        <attr name="arrowColor" format="color" />
+        <attr name="arrowWidth" format="dimension" />
+        <attr name="arrowPikeWidth" format="dimension" />
+        <attr name="arrowPikeHeight" format="dimension" />
+        <attr name="arrowPike" format="boolean" />
+        <attr name="arrowDash" format="boolean" />
+        <attr name="arrowDashGap" format="dimension" />
+        <attr name="arrowDashWidth" format="dimension" />
+    </declare-styleable>
+</resources>

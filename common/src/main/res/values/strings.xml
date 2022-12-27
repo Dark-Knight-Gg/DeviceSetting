@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="msg_nonnull_or_empty_field">このフィールドを入力してください。</string>
+    <string name="msg_common_error">Có lỗi xảy ra, vui lòng kiểm tra và thử lại</string>
+
+    <!-- Date Picker -->
+    <string name="title_date_picker">Chọn thời gian</string>
+    <string name="title_date_picker_range">Chọn khoảng thời gian</string>
+</resources>

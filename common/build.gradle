@@ -1,0 +1,157 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdkVersion buildConfiguration.compileSdk
+    buildToolsVersion buildConfiguration.buildTool
+
+    buildFeatures {
+        dataBinding true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "${versions.androidxComposeUi}"
+    }
+
+    defaultConfig {
+        minSdkVersion buildConfiguration.minSdk
+        targetSdkVersion buildConfiguration.targetSdk
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    lint {
+        disable 'NullSafeMutableLiveData'
+    }
+    namespace 'vn.com.vti.common'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation "junit:junit:${versions.jUnitCore}"
+    androidTestImplementation "androidx.test.ext:junit:${versions.jUnitAndroidExt}"
+    androidTestImplementation "androidx.test:runner:${versions.jUnitRunner}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${versions.jUnitEspressoCore}"
+
+    // Coroutine utilities
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.androidKotlinCoroutines}"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.androidKotlinCoroutines}"
+
+    // App compat
+    api "androidx.appcompat:appcompat:${versions.androidxAppCompat}"
+
+    // Kotlin Ext
+    api "androidx.core:core-ktx:${versions.androidxKotlinCore}"
+
+    // Core Ui
+    api "androidx.constraintlayout:constraintlayout:${versions.androidxConstraintLayout}"
+    api "androidx.recyclerview:recyclerview:${versions.androidxRecyclerView}"
+    // noinspection GradleDependency
+    api "com.google.android.material:material:${versions.googleMaterials}"
+    api "androidx.swiperefreshlayout:swiperefreshlayout:${versions.androidxSwipeLayout}"
+
+    // Navigation component
+    api "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    api "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    api "androidx.navigation:navigation-dynamic-features-fragment:$navigationVersion"
+
+    // ViewModel and LiveData
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidxLifecycle}"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:${versions.androidxLifecycle}"
+    api "androidx.lifecycle:lifecycle-runtime-ktx:${versions.androidxLifecycle}"
+    api "androidx.lifecycle:lifecycle-viewmodel-savedstate:${versions.androidxLifecycle}"
+    api "androidx.lifecycle:lifecycle-common-java8:${versions.androidxLifecycle}"
+
+    // Dependencies Injection
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+    implementation "androidx.hilt:hilt-work:$hiltJetpackVersion"
+    kapt "androidx.hilt:hilt-compiler:$hiltJetpackVersion"
+
+    // ReactivateX
+    api "io.reactivex.rxjava3:rxjava:${versions.reactivexJava3}"
+    api "io.reactivex.rxjava3:rxandroid:${versions.reactivexAndroid}"
+    api "io.reactivex.rxjava3:rxkotlin:${versions.reactivexKotlin}"
+
+    // RxBindings
+    api "com.jakewharton.rxbinding4:rxbinding:${versions.reactivexBinding}"
+
+    // Restful api
+    api "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    api "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    api "com.squareup.retrofit2:adapter-rxjava3:${versions.retrofit}"
+
+    // Networking logging
+    api "com.squareup.okhttp3:logging-interceptor:${versions.okHttpLogging}"
+
+    // Serialization
+    api "com.google.code.gson:gson:${versions.gson}"
+
+    // Image loader
+    api "com.github.bumptech.glide:glide:${versions.glide}"
+    api "com.github.bumptech.glide:annotations:${versions.glide}"
+    api "com.github.bumptech.glide:okhttp3-integration:${versions.glide}"
+    kapt "com.github.bumptech.glide:compiler:${versions.glide}"
+
+    // Logger
+    api "com.jakewharton.timber:timber:${versions.timber}"
+
+    // Firebase
+    api platform("com.google.firebase:firebase-bom:${versions.googleFirebaseBom}")
+    // Firebase-Analytics
+    api 'com.google.firebase:firebase-analytics-ktx'
+    // Firebase-Crashlytics
+    api 'com.google.firebase:firebase-crashlytics-ktx'
+    // Firebase-Cloud-Messaging
+    api 'com.google.firebase:firebase-messaging-ktx'
+
+    // Guava
+    api "com.google.guava:guava:${versions.googleGuava}"
+
+    //EventBus
+    api "org.greenrobot:eventbus:${versions.eventBus}"
+
+    // Work Manager
+    api "androidx.work:work-runtime:${versions.androidxWorkManager}"
+    api "androidx.work:work-runtime-ktx:${versions.androidxWorkManager}"
+    api "androidx.work:work-rxjava3:${versions.androidxWorkManager}"
+
+    // Secure preferences
+    api "androidx.security:security-crypto:${versions.androidxSecurityCrypto}"
+
+    // Gen QR
+    api "com.google.zxing:core:${versions.zxingCore}"
+
+    // Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.androidKotlinCoroutines}"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.androidKotlinCoroutines}"
+
+    // DataStore
+    api "androidx.datastore:datastore:${versions.androidDataStore}"
+    api "androidx.datastore:datastore-preferences:${versions.androidDataStore}"
+
+    api 'com.google.android.flexbox:flexbox:3.0.0'
+}
+
+kapt {
+    correctErrorTypes true
+}

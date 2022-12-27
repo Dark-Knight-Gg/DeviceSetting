@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="selected"
+            type="Boolean" />
+
+        <variable
+            name="text"
+            type="String" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_simple_dropdown"
+            android:backgroundTint="@color/bg_color_dropdown_item"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/common_button_height"
+            android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+            android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+            android:text="@{text}"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            app:viewCompatSelected="@{selected ?? false}"
+            tools:text="@tools:sample/full_names" />
+    </FrameLayout>
+</layout>
